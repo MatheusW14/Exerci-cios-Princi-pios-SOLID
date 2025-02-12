@@ -11,7 +11,7 @@ class Logger(ABC):
 # Implementação concreta para Logger em arquivo
 class LoggerArquivo(Logger):
     def escrever_log(self, mensagem):
-        with open("log.txt", "a") as file:
+        with open("log.txt", "a", encoding="utf-8") as file:
             file.write(f"{mensagem} \n")
 
 

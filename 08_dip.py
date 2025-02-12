@@ -24,9 +24,11 @@ class ConcreteSMSService(SMSService):
 
 
 class Notificacao:
-    def __init__(self, email_service: EmailService, sms_service: SMSService):
-        self.email_service = email_service
-        self.sms_service = sms_service
+    def __init__(
+        self, email_service_instance: EmailService, sms_service_instance: SMSService
+    ):
+        self.email_service = email_service_instance
+        self.sms_service = sms_service_instance
 
     def notificar_por_email(self, destinatario, mensagem):
         self.email_service.enviar_email(destinatario, mensagem)
